@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Survey</title>
+        <script src="https://code.jquery.com/jquery.js"></script>
+<!-- 	<link rel="stylesheet" type="text/css" href="reset.css"> -->
+<!-- 	<link rel="stylesheet" type="text/css" href="style.css"> -->
+</head>
+<body>
+
+<div id = "top">
+	<h1>Survey</h1>
+	<hr>
+</div>
+
+<div id = "about">
+	<h2>About You</h2>
+	
+	<h2 style = "font-size: 15px">Name (required)</h2>
+	<input type = "text" class = "form-control" id = "personName"></input>
+
+	<h2 style ="font-size: 15px">Link to a Photo Image (Required)</h2>
+	<input type = "text" class = "form-control" id = "personURL"></input>
+	
+	<br>
+	<hr>
+
+</div>
+
+<div class = "container2">
+	<h2>Matching Statements</h2>
+	<h2 style = "font-size: 15px">Select the appropriate number based on how much you agree with the statements.<br>
+	(1 = strongly disagree, 3 - somwewhat agree, 5 - strongly agree)</h2>
+
+	<div id = "q1">
+		<h4>Statement 1</h4>
+		<h5>Breakfast is my favorite meal</h5>
+		<select id="s1">
+			  <option value="1">1</option>
+			  <option value="2">2</option>
+			  <option value="3">3</option>
+			  <option value="4">4</option>
+			  <option value="5">5</option>
+		</select>
+	</div>
+		
+	<div id = "q2">
+		<h4>Statement 2</h4>
+		<h5>Cooking at home you consider as a fun night</h5>
+		<select id="s2">
+			  <option value="1">1</option>
+			  <option value="2">2</option>
+			  <option value="3">3</option>
+			  <option value="4">4</option>
+			  <option value="5">5</option>
+		</select>
+	</div>
+
+	<div id = "q3">
+		<h4>Statement 3</h4>
+		<h5>I want a dog</h5>
+		<select id="s3">
+			  <option value="1">1</option>
+			  <option value="2">2</option>
+			  <option value="3">3</option>
+			  <option value="4">4</option>
+			  <option value="5">5</option>
+		</select>
+	</div>
+		
+	<div id = "q4">
+		<h4>Statement 4</h4>
+		<h5>I want kids</h5>
+		<select id="s4">
+			  <option value="1">1</option>
+			  <option value="2">2</option>
+			  <option value="3">3</option>
+			  <option value="4">4</option>
+			  <option value="5">5</option>
+		</select>
+	</div>
+		
+	<div id = "q5">
+		<h4>Statement 5</h4>
+		<h5>Winter is my favorite season</h5>
+		<select id="s5">
+			  <option value="1">1</option>
+			  <option value="2">2</option>
+			  <option value="3">3</option>
+			  <option value="4">4</option>
+			  <option value="5">5</option>
+		</select>
+	</div>
+		
+	<div id = "q6">
+		<h4>Statement 6</h4>
+		<h5>I consider Donald Trump a good President</h5>
+		<select id="s6">
+			  <option value="1">1</option>
+			  <option value="2">2</option>
+			  <option value="3">3</option>
+			  <option value="4">4</option>
+			  <option value="5">5</option>
+		</select>
+	</div>
+		
+	<div id = "q7">
+		<h4>Statement 7</h4>
+		<h5>Vanilla is my favorite flavor ice cream</h5>
+		<select id="s7">
+			  <option value="1">1</option>
+			  <option value="2">2</option>
+			  <option value="3">3</option>
+			  <option value="4">4</option>
+			  <option value="5">5</option>
+		</select>
+	</div>
+		
+	<div id = "q8">
+		<h4>Statement 8</h4>
+		<h5>I prefer comedy movies over drama movies</h5>
+		<select id="s8">
+			  <option value="1">1</option>
+			  <option value="2">2</option>
+			  <option value="3">3</option>
+			  <option value="4">4</option>
+			  <option value="5">5</option>
+		</select>
+	</div>
+		
+	<div id = "q9">
+		<h4>Statement 9</h4>
+		<h5>College football is a priority for me on Saturdays</h5>
+		<select id="s9">
+			  <option value="1">1</option>
+			  <option value="2">2</option>
+			  <option value="3">3</option>
+			  <option value="4">4</option>
+			  <option value="5">5</option>
+		</select>
+	</div>
+		
+	<div id = "q10">
+		<h4>Statement 10</h4>
+		<h5>I am open to exercising with the person I am dating</h5>
+		<select id="s10">
+			  <option value="1">1</option>
+			  <option value="2">2</option>
+			  <option value="3">3</option>
+			  <option value="4">4</option>
+			  <option value="5">5</option>
+		</select>
+	<hr>
+	</div>
+
+	<div>
+		<button id="submit" style = "display: inline-block;">Submit</button>
+        <a href="/"><button type="button">Go to the homepage</button></a>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+
+	$("#submit").on("click", function(event) {
+
+		let scores = new Array
+
+		function makeScores (a, b, c, d, e, f, g, h, i, j){
+			scores.push(a)
+			scores.push(b)
+			scores.push(c)
+			scores.push(d)
+			scores.push(e)
+			scores.push(f)
+			scores.push(g)
+			scores.push(h)
+			scores.push(i)
+			scores.push(j)
+		}
+
+		makeScores($("#s1").val(), $("#s2").val(), $("#s3").val(), $("#s4").val(), $("#s5").val(), $("#s6").val(), $("#s7").val(), $("#s8").val(), $("#s9").val(), $("#s10").val())
+
+		let newPerson = {
+			name: $("#personName").val().trim(),
+			photo: $("#personURL").val().trim(),
+			scores: scores
+		};
+
+	      $.post("/api/friends", newPerson,
+	        function(data) {
+	        	console.log(newPerson)
+	        	console.log(data)
+
+	      		// compare to Karl and Hope
+	      		let sumKarl = 0;
+	      		let sumHope = 0;
+	      		let answer = "";
+	      		for (i = 0; i < 10; i++){
+	      			sumKarl += Math.abs(data[0].scores[i] - parseInt(newPerson.scores[i]))
+	      			sumHope += Math.abs(data[1].scores[i] - parseInt(newPerson.scores[i]))
+	      		}
+
+	      		// fill-in answer
+	      		if (sumKarl < sumHope){
+	      			answer = " Hope"
+	      		} 
+	      		if (sumKarl > sumHope){
+	      			answer = " Karl"
+	      		} 
+	      		if (sumKarl === sumHope){
+	      			answer = " Karl and Hope, good luck figuring that out."
+	      		}
+
+	      		// display results
+	      		alert(newPerson.name + ", you've matched with" + answer)
+	      		alert("Refresh the page to re-submit results.")
+
+	      		$("#s1").val("");
+				$("#s2").val("");
+				$("#s3").val("");
+				$("#s4").val("");
+				$("#s5").val("");
+				$("#s6").val("");
+				$("#s7").val("");
+				$("#s8").val("");
+				$("#s9").val("");
+				$("#s10").val("");
+				$("#personName").val("");
+				$("#personURL").val("");
+
+	      	})
+	      	})
+</script>
+
+</body>
+</html>
